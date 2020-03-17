@@ -1,6 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "holberton.h"
 #include <string.h>
+#include <starg.h>
 
 /**
 * _printf - the funtion print the chars
@@ -23,31 +24,36 @@ int _printf(const char *format, ...);
       specif_fto matrix[] = {
         {"c", print_char},
         {"i", print_int},
-        {"d", print_unsigned_int},
+        {"d", print_signed_int},
         {"s", print_string},
         {NULL, NULL}
       };
-      i = 0;
 
-  		while (format && format[i])
-  		{
-  			j = 0;
+      {
+        i = 0;
 
-  			while (matrix[j].fto)
-  			{
-  				if (*(matrix[j].fto) == format[i])
-  				{
-  					matrix[j].p(args);
-  					if (format[i + 1] != '\0')
-  						printf(", ");
+        while (format && format[i])
+        {
+          j = 0;
 
-  				}
-  				j++;
-  			}
-  			i++;
-  		}
-  		va_end(args);
+          while (matrix[j].fto)
+          {
+            if (args[x] + 1 ==  matrix[i])
+            {
+              if (*(matrix[j].fto) == format[i])
+              {
+                matrix[j].p(args);
+                /*	if (format[i + 1] != '\0')*/
+              }
+              j++;
+            }
+          }
+          i++;
+        }
+        va_end(args);
+      }
     }
+    _puts(args[x]);    }
   }
 
 }

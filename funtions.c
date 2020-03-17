@@ -1,10 +1,6 @@
 #include<stdio.h>
 #include"holberton.h"
 
-int i, j;
-char *a;
-
-
 
 /**
 * print_char - print characters
@@ -12,8 +8,7 @@ char *a;
 */
 void print_char(va_list args)
 {
-  a = va_arg(args, int);
-  _putchar(a);
+    _putchar(va_arg(args, int));
 }
 
 /**
@@ -22,20 +17,66 @@ void print_char(va_list args)
 */
 void print_int(va_list args)
 {
-  for (j = 0;args[j] < '\0'; j++)
-  {
-    i = va_arg(args[j], int);
-    _putchar(i);
-  }
+  int i = 0;
+   int mod = 1;
+   int digit;
+   unsigned int dig;
+
+   digit = va_arg(args, int);
+    if (digit < 0)
+    {
+        _putchar('-');
+        dig = digit * -1;
+        i++;
+    }
+    else
+        dig = digit;
+    while (dig / mod > 9)
+    {
+        mod = mod * 10;
+    }
+    while (mod > 0)
+    {
+        _putchar(dig / mod + '0');
+        dig = dig % mod;
+        mod = mod / 10;
+        i++;
+    }
+    return (i);
 }
 
 /**
 * print_float - prints floating point numbers
 * @args: pointer to arguments list
 */
-void print_float(va_list args)
+void print_signed_int(va_list args)
 {
-  printf("%f", va_arg(args, double));
+  int i = 0;
+   int mod = 1;
+   int digit;
+   unsigned int dig;
+
+   digit = va_arg(args, int);
+    if (digit < 0)
+    {
+        _putchar('-');
+        dig = digit * -1;
+        i++;
+    }
+    else
+        dig = digit;
+    while (dig / mod > 9)
+    {
+        mod = mod * 10;
+    }
+    while (mod > 0)
+    {
+        _putchar(dig / mod + '0');
+        dig = dig % mod;
+        mod = mod / 10;
+        i++;
+    }
+    return (i);
 }
 
 /**
@@ -44,10 +85,17 @@ void print_float(va_list args)
 */
 void print_string(va_list args)
 {
-  char *s;
-
+  char *s, *e;
   s = va_arg(args, char*);
-  s == NULL ? printf("(nil)") : printf("%s", s);
+  e[6] = "(nil)"
+  if (s == NULL)
+  {
+     _puts(e);
+  }
+  else
+  {
+    _puts(s);
+  }
 }
 
 /**
