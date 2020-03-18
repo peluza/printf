@@ -6,11 +6,11 @@
  */
 int _print_string(va_list args)
 {
-    char *s;
+	char *s;
 
-    s = va_arg(args, char*);
-    _puts(s);
-    
-    return (_strlen(s));
+	s = va_arg(args, char*);
+	_puts(s);
+
+	return (_strlen(s));
 }
 
