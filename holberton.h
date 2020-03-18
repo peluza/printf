@@ -5,12 +5,13 @@
 #include <stdio.h>
 
 /**
- * specicif_fto - the funtion is struct of the typedef struct
+ * struct fto - the funtion is struct of the typedef struct
  * @fto: the identificator to format
  * @p: called ot the funtion punters
+ * specif_fto struct - the funtion is struct of the typedef struct
  */
 
-typedef struct
+typedef struct fto
 {
 	char *fto;
 	void (*p)(va_list);
