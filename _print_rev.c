@@ -24,5 +24,5 @@ int _print_rev(va_list args)
 		_putchar(s[c]);
 		c--;
 	}
-	return (_strlen(s[c]));
+	return (c);
 }
