@@ -1,8 +1,10 @@
 #!/bin/bash
-git add .
+echo write git add:
+read a
+git add $a
 echo write  commit:
-read  a 
-git commit -m $a
-echo write oringin
-read b
-git push -u origin $b
+read  b 
+git commit -m $b
+echo write breach:
+read c
+git push -u origin $c
