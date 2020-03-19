@@ -17,12 +17,9 @@ int _printf(const char *format, ...)
 		{"r", _print_rev},
 		{0, 0}
 	};
-
 	if (format == 0)
 		return (-1);
-
 	va_start(args, format);
-
 	for (x = 0; format[x] != '\0'; x++)
 	{
 		if (format[x] == '%' && format[x + 1] == '%')
