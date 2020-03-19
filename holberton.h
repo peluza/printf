@@ -3,6 +3,8 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 /**
  * struct fto - the funtion is struct of the typedef struct
@@ -14,7 +16,7 @@
 typedef struct fto
 {
 	char *fto;
-	void (*p)(va_list);
+	int (*p)(va_list args);
 } specif_fto;
 
 int _printf(const char *format, ...);
