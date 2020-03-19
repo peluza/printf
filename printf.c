@@ -10,8 +10,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int j, x;
 
-	va_start(args, format);
-
 	specif_fto matrix[] = {
 		{"c", _print_char},
 		{"i", _print_int},
@@ -20,6 +18,8 @@ int _printf(const char *format, ...)
 		{"r", _print_rev},
 		{NULL, NULL}
 	};
+
+	va_start(args, format);
 
 	for (x = 0; format[x] != '\0'; x++)
 	{
