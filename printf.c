@@ -25,11 +25,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[x] == '%')
 		{
+			x = x + 1;
+
 			j = 0;
 			while (matrix[j].fto)
 			{
-				if (format[x + 1] == *(matrix[j]).fto)
+				if (format[x] == *(matrix[j]).fto)
 					(matrix[j].p(args));
+				
 				else
 				{
 					if (!format[x])
@@ -43,5 +46,5 @@ int _printf(const char *format, ...)
 		_putchar(format[x]);
 	}
 	va_end(args);
-	return (0);
+	return (x);
 }
