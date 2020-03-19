@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include<stdlib.h>
 /**
  *_printf - produces output according to a format
  *@format: character string
@@ -16,7 +15,7 @@ int _printf(const char *format, ...)
 		{"d", _print_int},
 		{"s", _print_string},
 		{"r", _print_rev},
-		{NULL, NULL}
+		{0, 0}
 	};
 
 	va_start(args, format);
