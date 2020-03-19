@@ -23,27 +23,27 @@ int _printf(const char *format, ...)
 
 	for (x = 0; format[x] != '\0'; x++)
 	{
+		if (format[x] == '%' && format[x + 1] == '%')
+			_putchar('%');
+
 		if (format[x] == '%')
 		{
 			x = x + 1;
-
 			j = 0;
 			while (matrix[j].fto)
 			{
 				if (format[x] == *(matrix[j]).fto)
 					(matrix[j].p(args));
-				
 				else
 				{
 					if (!format[x])
 						return (-1);
 				}
 				j++;
-			}  
-
+			}
 		}
 		else
-		_putchar(format[x]);
+			_putchar(format[x]);
 	}
 	va_end(args);
 	return (x);
