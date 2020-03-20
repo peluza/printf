@@ -1,6 +1,5 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
-
 #include <stdarg.h>
 /**
  * struct fto - the funtion is struct of the typedef struct
