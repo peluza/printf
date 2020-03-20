@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int j, x;
+	int j, x, count;
 
 	specif_fto matrix[] = {
 		{"c", _print_char},
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	for (x = 0; format[x] != '\0'; x++)
 	{
 		if (format[x] == '%' && format[x + 1] == '%')
-			_putchar('%');
+			count +=_putchar('%');
 
 		if (format[x] == '%')
 		{
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			while (matrix[j].fto)
 			{
 				if (format[x] == *(matrix[j]).fto)
-					(matrix[j].p(args));
+					count += (matrix[j].p(args));
 				else
 				{
 					if (!format[x])
@@ -42,8 +42,8 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-			_putchar(format[x]);
+			count += _putchar(format[x]);
 	}
 	va_end(args);
-	return (x);
+	return (count);
 }
