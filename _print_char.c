@@ -6,8 +6,10 @@
  */
 int _print_char(va_list args)
 {
+	int i;
 	char a = va_arg(args, int);
 	_putchar(a);
+	i = _strlen(a);
 
-	return (1);
+	return (i);
 }
