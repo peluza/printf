@@ -7,10 +7,12 @@
 int _print_string(va_list args)
 {
 	char *s;
+	int len;
 
 	s = va_arg(args, char*);
 	_puts(s);
+	len = _strlen(s);
 
-	return (_strlen(s));
+	return (len);
 }
 
