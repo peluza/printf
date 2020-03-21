@@ -1,6 +1,7 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 #include <stdarg.h>
+#include <stdio.h>
 /**
  * struct fto - the funtion is struct of the typedef struct
  * @fto: the identificator to format
