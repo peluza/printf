@@ -9,9 +9,14 @@ int _printf(const char *format, ...)
 	va_list args;
 	int j, i, out = 0;
 
-	specif_fto arbi[] = {{"c", _print_char}, {"i", _print_int},
-		{"d", _print_int}, {"s", _print_string}, {"r", _print_rev}, {NULL, NULL}};
-
+	specif_fto arbi[] = {
+		{"c", _print_char},
+		{"i", _print_int},
+		{"d", _print_int},
+		{"s", _print_string},
+		{"r", _print_rev},
+		{NULL, NULL}
+	};
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
