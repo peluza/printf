@@ -2,44 +2,40 @@
 /**
  *_printf - produces output according to a format
  *@format: character string
- *Return: s
+ *Return: out
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int j, x;
+	int j, i, out;
 
-	specif_fto matrix[] = {
-		{"c", _print_char},
-		{"i", _print_int},
-		{"d", _print_int},
-		{"s", _print_string},
-		{"r", _print_rev},
-		{0, 0}
-	};
+	specif_fto arbi[] = {{"c", _print_char}, {"i", _print_int},
+	{"d", _print_int}, {"s", _print_string}, {"r", _print_rev}, {NULL, NULL}};
+
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
-	for (x = 0; format[x] != '\0'; x++)
+	for (i = 0; format[i]; i++)
 	{
-		if (format[x] == '%' && format[x + 1] == '%')
-			_putchar('%');
-		if (format[x] == '%' && format[x + 1] == '\0')
-			return (-1);
-		if (format[x] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
+		{	_putchar('%');
+			out += 1;
+		}
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-			x = x + 1;
-			j = 0;
-			while (matrix[j].fto)
+			i = i + 1;
+			for (j = 0; arbi[j].fto; j++)
 			{
-				if (format[x] == *(matrix[j]).fto)
-					(matrix[j].p(args));
-				j++;
+				if (format[i] == *(arbi[j]).fto)
+					out += (arbi[j].p(args));
 			}
 		}
-		else
-			_putchar(format[x]);
+		else if (format[i] != '\0')
+		{
+			_putchar(format[i]);
+			out += 1;
+		}
 	}
 	va_end(args);
-	return (x);
+	return (out);
 }
