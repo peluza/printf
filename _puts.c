@@ -2,13 +2,13 @@
 /**
  *_puts - function prints characters and string
  *@str: address at memory
+ *Return: i
  */
-void _puts(char *str)
+int _puts(char *str)
 {
-	int x;
+	int i;
 
-	for (x = 0; str[x] != '\0'; x++)
-	{
-		_putchar(str[x]);
-	}
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+	return (i);
 }

@@ -7,8 +7,7 @@
  */
 int _print_rev(va_list args)
 {
-	char a;
-	char *s;
+	char a, *s;
 	int x, c;
 
 	s = va_arg(args, char *);
@@ -24,5 +23,5 @@ int _print_rev(va_list args)
 		_putchar(s[c]);
 		c--;
 	}
-	return (c);
+	return (x);
 }

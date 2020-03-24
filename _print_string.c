@@ -2,7 +2,7 @@
 /**
  *_print_string - function that print strings
  *@args: arguments
- *Return: s
+ *Return: len
  */
 int _print_string(va_list args)
 {
@@ -10,8 +10,7 @@ int _print_string(va_list args)
 	int len;
 
 	s = va_arg(args, char*);
-	_puts(s);
-	len = _strlen(s);
+	len = _puts(s);
 
 	return (len);
 }

@@ -22,6 +22,6 @@ int _print_rev(va_list args);
 int _print_string(va_list args);
 int _putchar(char c);
 int _strlen(char *s);
-void _puts(char *str);
+int _puts(char *str);
 
 #endif
