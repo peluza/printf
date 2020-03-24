@@ -10,6 +10,8 @@ int _print_string(va_list args)
 	int len;
 
 	s = va_arg(args, char*);
+	if (s == NULL)
+		s = "(null)";
 	len = _puts(s);
 
 	return (len);
